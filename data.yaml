@@ -1,0 +1,6 @@
+
+train: DataSet/train
+val: DataSet/val
+
+nc: 2
+names: ['person', 'car']
