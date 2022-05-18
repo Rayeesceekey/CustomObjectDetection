@@ -50,22 +50,28 @@ And also we can use their pre-trained largest model to do the inference as it is
     sudo docker run -d --volume /absolute_path_to_project_in_local/app/output/:/app/yolov5/runs/ --name "container_name" -p 80:80 "image_name"
     ```
 - Then open any API client or you can open swagger UI by :- http://127.0.0.1/docs
-    - Train end point :- /model_train
+    - Train end point :- **/model_train**
+        
         sample parameters:-
+
             {
                 "yaml_file_path": "data.yaml",
                 "yolo_weight_file": "yolov5l.pt",
                 "epochs": 150
             }
-    - Inference end point : /model_inference/from_path(Inference using folder path,will do inference for all images and output will be stored in "output" directory)
+    - Inference end point : **/model_inference/from_path**(Inference using folder path,will do inference for all images and output will be stored in "output" directory)
+        
         sample parameters:-
+
             {
                 "image_path": "DataSet/test",
                 "yaml_file_path": "data.yaml",
                 "model_path": "artifacts/weights/best.pt"
             }
-    - Inference end point : /model_inference/from_image(Inference by image path and output will be stored in "output" directory) and it shows the output image in response body.
+    - Inference end point : **/model_inference/from_image**(Inference by image path and output will be stored in "output" directory) and it shows the output image in response body.
+        
         sample parameters:-
+
             {
                 "image_path": "DataSet/test",
                 "yaml_file_path": "data.yaml",
